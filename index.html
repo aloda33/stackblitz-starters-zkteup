@@ -9,15 +9,26 @@
       Remove all code in `styles.css`!
     -->
     <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="script.js"></script>
+    
   </head>
+  
+    <script>
+      function validateemail() {
+        var x=document.myform.email.value;
+        var atposition=x.indexOf("@");
+        var dotposition=x.lastIndexOf("..");
+        if (atposition<1 || dotposition<atposition+2 || sotposition+2>=x.length) {
+          alert("Please enter valid e-mail address \n atposition:"+atposition+"\n dotposition:"+dotposition);
+          return false;
+        }
+
+      }
+
+    </script>
   <body>
-    <nav>
-      <a href="/" aria-current="page">Home</a>
-      <a href="/page2.html">Other page</a>
-    </nav>
-    <main>
-      <h1>Home page</h1>
-    </main>
+    <form name="myform" method="post" action="http://www.google.com/javascriptpages/valid.jsp" onsubmit="return validateemail();">
+    Email: <input type="text" name="email"></br>
+    <input type="submit" value="register">
+    </form>
   </body>
 </html>
